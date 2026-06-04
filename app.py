@@ -53,12 +53,14 @@ h1,h2,h3{
 # LOAD MODEL
 # =====================================================
 
+import tensorflow as tf
+import pickle
+
 from tensorflow.keras.models import load_model
 
-model = load_model("model_ann.h5")
+model = load_model("model_ann.h5", compile=False)
 
-with open("tfidf.pkl","rb") as f:
-    tfidf = pickle.load(f)
+vectorizer = pickle.load(open("tfidf.pkl", "rb"))
 
 # =====================================================
 # PREPROCESSING
