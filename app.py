@@ -51,7 +51,9 @@ h1,h2,h3{
 # LOAD MODEL
 # =====================================================
 
-model = tf.keras.models.load_model("model_ann.keras")
+from tensorflow.keras.models import load_model
+
+model = load_model("model_ann.h5")
 
 with open("tfidf.pkl","rb") as f:
     tfidf = pickle.load(f)
